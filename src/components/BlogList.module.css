@@ -1,0 +1,24 @@
+/*
+    In general, we use `display: flex` with `flex-direction: column`
+    when rendering a list of elements.
+*/
+
+.blogList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.blogCard {
+    padding: 1rem;
+    /* border: 1px solid #ddd; */
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blogCard:hover {
+    transform: scale(1.02);
+}

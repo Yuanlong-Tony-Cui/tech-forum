@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import BlogList from './components/BlogList';
+import BlogPost from './components/BlogPost';
 
 function App() {
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ padding: '1rem', maxWidth: '600px', margin: 'auto' }}>
+      {selectedId ? (
+        <BlogPost id={selectedId} onBack={() => setSelectedId(null)} />
+      ) : (
+        <BlogList onSelect={setSelectedId} />
+      )}
     </div>
   );
 }
