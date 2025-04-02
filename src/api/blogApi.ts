@@ -24,7 +24,8 @@ export async function fetchBlogList(): Promise<BlogSummary[]> {
     ];
 
     const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-    return response.data.slice(0, 10).map((post: any) => ({
+    console.log(response);
+    return response.data.slice(0, 5).map((post: any) => ({
         id: post.id.toString(),
         title: post.title,
         summary: post.body,
