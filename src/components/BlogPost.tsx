@@ -11,7 +11,8 @@ export default function BlogPost({ id, onBack }: Props) {
 	const [post, setPost] = useState<BlogPostType | null>(null);
 
 	useEffect(() => {
-		fetchBlogPost(id).then(setPost);
+		fetchBlogPost(id)
+			.then(setPost);
 	}, [id]); // runs after id changes
 
 	if (!post) return <p>Loading...</p>;
