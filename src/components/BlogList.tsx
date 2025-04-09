@@ -14,17 +14,20 @@ export default function BlogList({ onSelect }: Props) {
   }, []); // runs only on the first render
 
   return (
-    <div className={styles.blogList}>
-      {blogs.map(blog => (
-        <div
-          key={blog.id}
-          className={styles.blogCard}
-          onClick={() => onSelect(blog.id)}
-        >
-          <h3>{blog.title}</h3>
-          <p>{blog.summary}</p>
-        </div>
-      ))}
+    <div>
+      <h1>Blog Posts</h1>
+      <div className={styles.blogList}>
+        {blogs.map(blog => (
+          <div
+            key={blog.id}
+            className={styles.blogCard}
+            onClick={() => onSelect(blog.id)}
+          >
+            <h3>{blog.title}</h3>
+            <p>{blog.summary}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
